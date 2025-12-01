@@ -1,5 +1,7 @@
 
-<img width="1000" height="1000" alt="LureCoMidRes" src="https://github.com/user-attachments/assets/94d57654-1314-41f9-bfd4-ceb591ab8075" />
+<img width="500" height="500" alt="LureCoLowRes" src="https://github.com/user-attachments/assets/d8a8c903-dae2-48dc-8819-80ae308539d5" />
 
-Company database management app for LureCo
+
+Company Database Management App for LureCo
+
 
