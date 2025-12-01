@@ -4,4 +4,5 @@
 
 Company Database Management App for LureCo
 
+mvn javafx:run
 
