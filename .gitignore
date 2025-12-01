@@ -1,0 +1,28 @@
+# Eclipse files
+/.classpath
+/.project
+/.settings/
+
+# Maven target folder
+/target/
+
+# Log files
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Eclipse launch configurations
+*.launch
+
+# IntelliJ IDEA files (if ever used)
+/*.iml
+/.idea/
+
+# Java class files
+*.class
+
+# Generated files
+/generated-sources/
+

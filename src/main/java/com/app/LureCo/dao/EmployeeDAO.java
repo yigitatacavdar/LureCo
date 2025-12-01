@@ -1,0 +1,80 @@
+package com.app.LureCo.dao;
+
+import java.util.ArrayList;
+
+
+import java.util.List;
+
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
+import org.hibernate.query.Query;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.app.LureCo.util.HibernateUtil;
+import com.app.LureCo.entity.Employee;
+
+public class EmployeeDAO {
+    public void save(Employee employee) {
+        Transaction tx = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            tx = session.beginTransaction();
+            session.persist(employee);
+            tx.commit();
+        }
+    }
+    
+    public List<Employee> getAll() {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            return session.createQuery("from Employee", Employee.class).list();
+        }
+    }
+    
+    public void delete(int id) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+
+            Employee employee = session.get(Employee.class, id);
+            if (employee != null) {
+                session.remove(employee);
+                System.out.println("Deleted employee with id:" + id);
+            } else {
+                System.out.println("employee with id " + id + " not found.");
+            }
+
+            transaction.commit();
+        }
+    }
+    
+    public List<Employee> search(String department, String office, String role) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+        CriteriaQuery<Employee> cq = cb.createQuery(Employee.class);
+        Root<Employee> root = cq.from(Employee.class);
+
+        List<Predicate> predicates = new ArrayList<>();
+
+        if (department != null && !department.isBlank()) {
+            predicates.add(cb.equal(root.get("department"), department));
+        }
+
+        if (office != null && !office.isBlank()) {
+            predicates.add(cb.equal(root.get("office"), office));
+        }
+
+        if (role != null && !role.isBlank()) {
+            predicates.add(cb.equal(root.get("role"), role));
+        }
+
+        cq.select(root).where(predicates.toArray(new Predicate[0]));
+
+        List<Employee> results = session.createQuery(cq).getResultList();
+        session.close();
+        return results;
+    }
+
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "https://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- SQLite connection -->
+        <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
+        <property name="hibernate.connection.url">jdbc:sqlite:database.db</property>
+
+        <!-- Dialect -->
+        <property name="hibernate.dialect">com.app.LureCo.util.CustomSQLiteDialect</property>
+
+        <!-- Auto create/update tables -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Show generated SQL -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Add your entity classes here -->
+        <!-- We'll add mapping soon -->
+        <mapping class="com.app.LureCo.entity.Employee"/>
+        <mapping class="com.app.LureCo.entity.Office"/>
+        <mapping class="com.app.LureCo.entity.Department"/>
+        <mapping class="com.app.LureCo.entity.Project"/>
+    </session-factory>
+</hibernate-configuration>
+
