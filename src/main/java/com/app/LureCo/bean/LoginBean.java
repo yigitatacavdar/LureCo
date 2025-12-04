@@ -1,4 +1,4 @@
-package com.app.LureCo;
+package com.app.LureCo.bean;
 
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;

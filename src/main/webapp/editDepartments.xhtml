@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Departments</title>
+</h:head>
+<h:body>
+    <h:button value="Menu" outcome="menu" />
+    <h2>Departments List</h2>
+
+    <h:dataTable value="#{departmentBean.departments}" var="e" border="1">
+        <h:column>
+            <f:facet name="header">ID</f:facet>
+            #{e.id}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Name</f:facet>
+            #{e.name}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Department Head</f:facet>
+            #{e.departmentHead}
+        </h:column>
+    </h:dataTable>
+    
+<h:form>
+    <h:panelGrid columns="2">
+        <h:outputLabel value="Name:" for="name" />
+        <h:inputText id="name" value="#{departmentBean.newDepartment.name}" />
+
+        <h:outputLabel value="Department Head:" for="departmentHead" />
+        <h:inputText id="departmentHead" value="#{departmentBean.newDepartment.departmentHead}" />
+    </h:panelGrid>
+
+    <h:commandButton value="Add Department" action="#{departmentBean.addDepartment}" />
+</h:form>
+
+
+<h:form>
+    <h:panelGrid columns="2">
+        <h:outputLabel value="ID:" for="id" />
+        <h:inputText id="id" placeholder="id" value="#{departmentBean.id}" />
+    </h:panelGrid>
+    <h:commandButton value="Delete Department" action="#{departmentBean.deleteDepartment}" />
+</h:form>
+
+</h:body>
+</html>

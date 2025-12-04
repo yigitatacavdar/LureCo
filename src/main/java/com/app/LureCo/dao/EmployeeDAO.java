@@ -59,16 +59,18 @@ public class EmployeeDAO {
         List<Predicate> predicates = new ArrayList<>();
 
         if (department != null && !department.isBlank()) {
-            predicates.add(cb.equal(root.get("department"), department));
+            // case-insensitive
+            predicates.add(cb.equal(cb.lower(root.get("department")), department.toLowerCase()));
         }
 
         if (office != null && !office.isBlank()) {
-            predicates.add(cb.equal(root.get("office"), office));
+            predicates.add(cb.equal(cb.lower(root.get("office")), office.toLowerCase()));
         }
 
         if (role != null && !role.isBlank()) {
-            predicates.add(cb.equal(root.get("role"), role));
+            predicates.add(cb.equal(cb.lower(root.get("role")), role.toLowerCase()));
         }
+
 
         cq.select(root).where(predicates.toArray(new Predicate[0]));
 

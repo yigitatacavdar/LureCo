@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Office</title>
+</h:head>
+<h:body>
+    <h:button value="Menu" outcome="menu" />
+    <h2>Offices List</h2>
+
+    <h:dataTable value="#{officeBean.offices}" var="e" border="1">
+        <h:column>
+            <f:facet name="header">ID</f:facet>
+            #{e.id}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Name</f:facet>
+            #{e.name}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Location</f:facet>
+            #{e.location}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Max Capacity</f:facet>
+            #{e.maxCapacity}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Phone</f:facet>
+            #{e.phone}
+        </h:column>
+    </h:dataTable>
+    
+<h:form>
+    <h:panelGrid columns="2">
+        <h:outputLabel value="Name:" for="name" />
+        <h:inputText id="name" value="#{officeBean.newOffice.name}" />
+
+        <h:outputLabel value="Location:" for="location" />
+        <h:inputText id="location" value="#{officeBean.newOffice.location}" />
+
+        <h:outputLabel value="Max Capacity:" for="maxCapacity" />
+        <h:inputText id="maxCapacity" value="#{officeBean.newOffice.maxCapacity}" />
+
+        <h:outputLabel value="Phone:" for="phone" />
+        <h:inputText id="phone" value="#{officeBean.newOffice.phone}" />
+    </h:panelGrid>
+
+    <h:commandButton value="Add Office" action="#{officeBean.addOffice}" />
+</h:form>
+
+
+<h:form>
+    <h:panelGrid columns="2">
+        <h:outputLabel value="ID:" for="id" />
+        <h:inputText id="id" placeholder="id" value="#{officeBean.id}" />
+    </h:panelGrid>
+    <h:commandButton value="Delete Office" action="#{officeBean.deleteOffice}" />
+</h:form>
+
+</h:body>
+</html>

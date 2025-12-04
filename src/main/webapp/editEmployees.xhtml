@@ -6,7 +6,7 @@
     <title>Employees</title>
 </h:head>
 <h:body>
-
+	<h:button value="Menu" outcome="menu" />
     <h2>Employees List</h2>
 
     <h:dataTable value="#{employeeBean.employees}" var="e" border="1">
@@ -32,7 +32,7 @@
         </h:column>
     </h:dataTable>
     
-    <h:form>
+<h:form>
     <h:panelGrid columns="2">
         <h:outputLabel value="Name:" for="name" />
         <h:inputText id="name" value="#{employeeBean.newEmployee.name}" />
@@ -48,6 +48,15 @@
     </h:panelGrid>
 
     <h:commandButton value="Add Employee" action="#{employeeBean.addEmployee}" />
+</h:form>
+
+
+<h:form>
+    <h:panelGrid columns="2">
+        <h:outputLabel value="ID:" for="id" />
+        <h:inputText id="id" placeholder="id" value="#{employeeBean.id}" />
+    </h:panelGrid>
+    <h:commandButton value="Delete Employee" action="#{employeeBean.deleteEmployee}" />
 </h:form>
 
 </h:body>
