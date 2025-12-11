@@ -1,19 +1,136 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html">
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      lang="en">
+
 <h:head>
-    <title>Login Page</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✅ GOOGLE FONTS (VALID XHTML) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Playfair+Display:wght@600;800;900&amp;display=swap"
+        rel="stylesheet" />
+        
+        <link rel="stylesheet" href="resources/fish/style.css" />
+
+    <title>Menu</title>
+
+    <!-- ✅ CSS -->
+    
+
 </h:head>
+
 <h:body>
-    <h:form>
-        <h:panelGrid columns="2">
-            <h:outputLabel value="Username:" />
-            <h:inputText value="#{loginBean.username}" />
-            <h:outputLabel value="Password:" />
-            <h:inputSecret value="#{loginBean.password}" />
-        </h:panelGrid>
-        <h:commandButton value="Login" action="#{loginBean.login}" />
-        <h:messages />
-    </h:form>
+
+    <header class="fish__container">
+
+        <div class="header__section">
+
+            <div class="header__top">
+
+                <div class="logo__box">
+                    <div id="logo"></div>
+                </div>
+
+                <div class="company__general">
+                    <span class="text text--1">Thursday, January 1 , 2026</span>
+                    <span class="text text--2">Sea Harvest</span>
+                    <span class="text text--3">Just Released</span>
+                </div>
+
+                <div class="markets">
+                    <span class="canal canal--1">South canal</span>
+                    <span class="canal canal--2">Ohio canal</span>
+                    <span class="canal canal--3">Lousiana canal</span>
+              		<span class="canal canal--4">Coming Soon</span>
+                </div>
+
+            </div>
+
+            <div class="header__bottom">
+
+                <div class="edit__office">
+                    <button class="btn btn__office">edit Office</button>
+                </div>
+
+                <div class="search">
+                    <button class="btn btn__search">search</button>
+                </div>
+
+                <div class="edit__avenue">
+                    <button class="btn btn__avenue">edit Department</button>
+                </div>
+
+                <div class="edit__class">
+                    <button class="btn btn__class">edit Projects</button>
+                </div>
+
+                <div class="edit__second">
+                    <button class="btn btn__second">edit employees</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="info__section">
+
+            <div class="all__in__section">
+            
+            
+               <h:form styleClass="login-form">
+
+    <h:panelGrid columns="2" styleClass="login-grid">
+
+        <h:outputLabel value="Username:" styleClass="login-label" />
+        <h:inputText value="#{loginBean.username}" styleClass="login-input" />
+
+        <h:outputLabel value="Password:" styleClass="login-label" />
+        <h:inputSecret value="#{loginBean.password}" styleClass="login-input" />
+
+    </h:panelGrid>
+
+    <h:commandButton 
+        value="Login" 
+        action="#{loginBean.login}" 
+        styleClass="login-button" 
+    />
+
+    <h:messages styleClass="login-messages" />
+
+</h:form>
+            </div>
+
+            <div class="avaliable__dates">
+
+                <div class="avaliable__dates--general">
+
+                    <span class="date__text--1">Holiday</span>
+                    <span class="date__text--2">HRS</span>
+
+                    <div id="watch-container"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="getin--touch__section"></div>
+        <div class="footer__section"></div>
+
+    </header>
+
+    <!-- ✅ JS MODULES -->
+    
+    
+    <script src="https://unpkg.com/three@0.160.1/build/three.min.js"></script>
+<script src="https://unpkg.com/three@0.160.1/examples/js/loaders/GLTFLoader.js"></script>
+
+<h:outputScript library="fish" name="main__2.js" type="module" />
+
 </h:body>
 </html>

@@ -64,7 +64,7 @@ public class App extends Application {
 
         BorderPane root = new BorderPane();
         root.setCenter(webView);
-        Scene scene = new Scene(root, 512, 384);
+        Scene scene = new Scene(root, 1450, 760);
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/LureCo.png")));
         primaryStage.setScene(scene);
         primaryStage.setTitle("LureCo");

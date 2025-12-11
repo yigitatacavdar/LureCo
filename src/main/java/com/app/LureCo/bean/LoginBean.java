@@ -16,7 +16,7 @@ public class LoginBean implements Serializable {
 
     public String login() {
         if ("admin".equals(username) && "123".equals(password)) {
-            return "menu?faces-redirect=true";
+            return "searchEmployees?faces-redirect=true";
         }
 
         FacesContext.getCurrentInstance().addMessage(null,
@@ -32,3 +32,4 @@ public class LoginBean implements Serializable {
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
 }
+

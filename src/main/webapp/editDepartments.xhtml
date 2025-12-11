@@ -1,13 +1,106 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="jakarta.faces.html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+
 <h:head>
-    <title>Departments</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✅ GOOGLE FONTS (VALID XHTML) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Playfair+Display:wght@600;800;900&amp;display=swap"
+        rel="stylesheet" />
+        
+        <link rel="stylesheet" href="resources/fish/style.css" />
+
+    <title>Menu</title>
+
+    <!-- ✅ CSS -->
+    
+
 </h:head>
+
 <h:body>
-    <h:button value="Menu" outcome="menu" />
-    <h2>Departments List</h2>
+
+    <header class="fish__container">
+
+        <div class="header__section">
+
+            <div class="header__top">
+
+                <div class="logo__box">
+                    <div id="logo"></div>
+                </div>
+
+                <div class="company__general">
+                    <span class="text text--1">Thursday, January 1 , 2026</span>
+                    <span class="text text--2">Sea Harvest</span>
+                    <span class="text text--3">Just Released</span>
+                </div>
+
+                <div class="markets">
+                    <span class="canal canal--1">South canal</span>
+                    <span class="canal canal--2">Ohio canal</span>
+                    <span class="canal canal--3">Lousiana canal</span>
+              		<span class="canal canal--4">Coming Soon</span>
+                </div>
+
+            </div>
+
+            <div class="header__bottom">
+
+                              <div class="edit__office">
+                     <h:button 
+        value="edit office"
+        outcome="editOffices"
+        styleClass="btn btn__office" />
+                </div>
+
+                <div class="search">
+    		<h:button 
+        	value="search"
+        	outcome="searchEmployees"
+        	styleClass="btn btn__search"
+    		/>
+			</div>
+
+                <div class="edit__avenue">
+    	<h:button 
+        value="edit Department"
+        outcome="editDepartments"
+        styleClass="btn btn__avenue"
+   		 />
+</div>
+
+        <div class="edit__class">
+    <h:button 
+        value="edit Projects"
+        outcome="editProjects"
+        styleClass="btn btn__class"
+    />
+</div>
+                <div class="edit__second">
+    <h:button 
+        value="edit Employees"
+        outcome="editEmployees"
+        styleClass="btn btn__second"
+    />
+</div>
+            </div>
+
+        
+        
+           </div>   
+
+        <div class="info__section">
+
+            <div class="all__in__section"  >
+           
+
+         <h2>Departments List</h2>
 
     <h:dataTable value="#{departmentBean.departments}" var="e" border="1">
         <h:column>
@@ -43,7 +136,37 @@
         <h:inputText id="id" placeholder="id" value="#{departmentBean.id}" />
     </h:panelGrid>
     <h:commandButton value="Delete Department" action="#{departmentBean.deleteDepartment}" />
-</h:form>
+</h:form> 
+
+            </div>
+
+            <div class="avaliable__dates">
+
+                <div class="avaliable__dates--general">
+
+                    <span class="date__text--1">Holiday</span>
+                    <span class="date__text--2">HRS</span>
+
+                    <div id="watch-container"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="getin--touch__section"></div>
+        <div class="footer__section"></div>
+
+    </header>
+
+    <!-- ✅ JS MODULES -->
+    
+    
+    <script src="https://unpkg.com/three@0.160.1/build/three.min.js"></script>
+<script src="https://unpkg.com/three@0.160.1/examples/js/loaders/GLTFLoader.js"></script>
+
+<h:outputScript library="fish" name="main__2.js" type="module" />
 
 </h:body>
 </html>

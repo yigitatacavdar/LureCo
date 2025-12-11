@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      lang="en">
+
+<h:head>
+    <title>Three Test</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+        }
+
+        #box {
+            width: 400px;
+            height: 300px;
+            background: red;
+        }
+    </style>
+</h:head>
+
+<h:body>
+
+    <div id="box"></div>
+
+    <!-- ✅ THREE.JS CDN -->
+    <script src="https://unpkg.com/three@0.160.1/build/three.min.js"></script>
+
+    <!-- ✅ Your JSF-managed script -->
+    <h:outputScript library="fish" name="main.js" />
+
+</h:body>
+
+</html>
