@@ -9,7 +9,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ✅ GOOGLE FONTS (VALID XHTML) -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Playfair+Display:wght@600;800;900&amp;display=swap"
         rel="stylesheet" />
@@ -18,7 +18,6 @@
 
     <title>Menu</title>
 
-    <!-- ✅ CSS -->
     
 
 </h:head>
@@ -37,15 +36,13 @@
 
                 <div class="company__general">
                     <span class="text text--1">Thursday, January 1 , 2026</span>
-                    <span class="text text--2">Sea Harvest</span>
+                    <span class="text text--2">LureCo database management system</span>
                     <span class="text text--3">Just Released</span>
                 </div>
 
                 <div class="markets">
-                    <span class="canal canal--1">South canal</span>
-                    <span class="canal canal--2">Ohio canal</span>
-                    <span class="canal canal--3">Lousiana canal</span>
-              		<span class="canal canal--4">Coming Soon</span>
+          
+              		<iframe src="https://free.timeanddate.com/clock/ia74i4nl/n680/szw110/szh110/hoc000/hbw3/hfc09f/cf100/hnc07c/hwc000/facfff/fdi76/mqcfff/mqs4/mqw4/mqd60/mhcfff/mhs4/mhl5/mhw4/mhd62/mmv0/hhcfff/hhs1/hhb10/hmcfff/hms1/hmb10/hscfff/hsw3" frameborder="0" width="110" height="110" styleClass="clockwise" ></iframe>
                 </div>
 
             </div>
@@ -100,43 +97,79 @@
             <div class="all__in__section"  >
            
 
-         <h2>Departments List</h2>
+<h2 class="department-title">Departments List</h2>
 
-    <h:dataTable value="#{departmentBean.departments}" var="e" border="1">
-        <h:column>
-            <f:facet name="header">ID</f:facet>
-            #{e.id}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Name</f:facet>
-            #{e.name}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Department Head</f:facet>
-            #{e.departmentHead}
-        </h:column>
-    </h:dataTable>
+<h:dataTable value="#{departmentBean.departments}"
+             var="e"
+             border="1"
+             styleClass="department-table">
+
+    <h:column styleClass="department-column">
+        <f:facet name="header">
+            <h:outputText value="ID" styleClass="department-header"/>
+        </f:facet>
+        <h:outputText value="#{e.id}" styleClass="department-cell"/>
+    </h:column>
+
+    <h:column styleClass="department-column">
+        <f:facet name="header">
+            <h:outputText value="Name" styleClass="department-header"/>
+        </f:facet>
+        <h:outputText value="#{e.name}" styleClass="department-cell"/>
+    </h:column>
+
+    <h:column styleClass="department-column">
+        <f:facet name="header">
+            <h:outputText value="Department Head" styleClass="department-header"/>
+        </f:facet>
+        <h:outputText value="#{e.departmentHead}" styleClass="department-cell"/>
+    </h:column>
+
+</h:dataTable>
+
     
-<h:form>
-    <h:panelGrid columns="2">
-        <h:outputLabel value="Name:" for="name" />
-        <h:inputText id="name" value="#{departmentBean.newDepartment.name}" />
+<h:form styleClass="department-form add-department-form">
 
-        <h:outputLabel value="Department Head:" for="departmentHead" />
-        <h:inputText id="departmentHead" value="#{departmentBean.newDepartment.departmentHead}" />
+    <h:panelGrid columns="2" styleClass="department-grid">
+
+        <h:outputLabel value="Name:" for="name"
+                       styleClass="department-label"/>
+        <h:inputText id="name"
+                     value="#{departmentBean.newDepartment.name}"
+                     styleClass="department-input"/>
+
+        <h:outputLabel value="Department Head:" for="departmentHead"
+                       styleClass="department-label"/>
+        <h:inputText id="departmentHead"
+                     value="#{departmentBean.newDepartment.departmentHead}"
+                     styleClass="department-input"/>
+
     </h:panelGrid>
 
-    <h:commandButton value="Add Department" action="#{departmentBean.addDepartment}" />
+    <h:commandButton value="Add Department"
+                     action="#{departmentBean.addDepartment}"
+                     styleClass="department-button add-button"/>
 </h:form>
 
 
-<h:form>
-    <h:panelGrid columns="2">
-        <h:outputLabel value="ID:" for="id" />
-        <h:inputText id="id" placeholder="id" value="#{departmentBean.id}" />
+<h:form styleClass="department-form delete-department-form">
+
+    <h:panelGrid columns="2" styleClass="department-grid">
+
+        <h:outputLabel value="ID:" for="id"
+                       styleClass="department-label"/>
+        <h:inputText id="id"
+                     placeholder="id"
+                     value="#{departmentBean.id}"
+                     styleClass="department-input department-input--2"/>
+
     </h:panelGrid>
-    <h:commandButton value="Delete Department" action="#{departmentBean.deleteDepartment}" />
-</h:form> 
+
+    <h:commandButton value="Delete Department"
+                     action="#{departmentBean.deleteDepartment}"
+                     styleClass="department-button delete-button--2"/>
+</h:form>
+
 
             </div>
 
@@ -144,8 +177,13 @@
 
                 <div class="avaliable__dates--general">
 
-                    <span class="date__text--1">Holiday</span>
-                    <span class="date__text--2">HRS</span>
+                    <span class="date__text--1">UPCOMING</span>
+                    <span class="date__text--2">EVENTS</span>
+                    
+                     <span class="canal canal--1">MONDAY : ESCAPE FROM HUMANS</span>
+                    <span class="canal canal--2">WEDNESDAY : BUBBLE PARTY</span>
+                    <span class="canal canal--3">FRIDAY : FEMALE RAINBOW FISH SHOWCASE </span>
+              		<span class="canal canal--4">SUNDAY: FUNDAY</span>
 
                     <div id="watch-container"></div>
 
@@ -160,7 +198,6 @@
 
     </header>
 
-    <!-- ✅ JS MODULES -->
     
     
     <script src="https://unpkg.com/three@0.160.1/build/three.min.js"></script>

@@ -37,15 +37,13 @@
 
                 <div class="company__general">
                     <span class="text text--1">Thursday, January 1 , 2026</span>
-                    <span class="text text--2">Sea Harvest</span>
+                    <span class="text text--2">LureCo database management system</span>
                     <span class="text text--3">Just Released</span>
                 </div>
 
                 <div class="markets">
-                    <span class="canal canal--1">South canal</span>
-                    <span class="canal canal--2">Ohio canal</span>
-                    <span class="canal canal--3">Lousiana canal</span>
-              		<span class="canal canal--4">Coming Soon</span>
+                
+              		<iframe src="https://free.timeanddate.com/clock/ia74i4nl/n680/szw110/szh110/hoc000/hbw3/hfc09f/cf100/hnc07c/hwc000/facfff/fdi76/mqcfff/mqs4/mqw4/mqd60/mhcfff/mhs4/mhl5/mhw4/mhd62/mmv0/hhcfff/hhs1/hhb10/hmcfff/hms1/hmb10/hscfff/hsw3" frameborder="0" width="110" height="110" styleClass="clockwise" ></iframe>
                 </div>
 
             </div>
@@ -100,65 +98,119 @@
             <div class="all__in__section"  >
            
 
-      <h2>Employees List</h2>
+<h2 class="employee-title">Employees List</h2>
 
-    <h:dataTable value="#{employeeBean.employees}" var="e" border="1">
-        <h:column>
-            <f:facet name="header">ID</f:facet>
-            #{e.id}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Name</f:facet>
-            #{e.name}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Department</f:facet>
-            #{e.department}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Office</f:facet>
-            #{e.office}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Role</f:facet>
-            #{e.role}
-        </h:column>
-    </h:dataTable>
+<h:dataTable value="#{employeeBean.employees}"
+             var="e"
+             border="1"
+             styleClass="employee-table">
+
+    <h:column styleClass="employee-column">
+        <f:facet name="header">
+            <h:outputText value="ID" styleClass="employee-header"/>
+        </f:facet>
+        <h:outputText value="#{e.id}" styleClass="employee-cell"/>
+    </h:column>
+
+    <h:column styleClass="employee-column">
+        <f:facet name="header">
+            <h:outputText value="Name" styleClass="employee-header"/>
+        </f:facet>
+        <h:outputText value="#{e.name}" styleClass="employee-cell"/>
+    </h:column>
+
+    <h:column styleClass="employee-column">
+        <f:facet name="header">
+            <h:outputText value="Department" styleClass="employee-header"/>
+        </f:facet>
+        <h:outputText value="#{e.department}" styleClass="employee-cell"/>
+    </h:column>
+
+    <h:column styleClass="employee-column">
+        <f:facet name="header">
+            <h:outputText value="Office" styleClass="employee-header"/>
+        </f:facet>
+        <h:outputText value="#{e.office}" styleClass="employee-cell"/>
+    </h:column>
+
+    <h:column styleClass="employee-column">
+        <f:facet name="header">
+            <h:outputText value="Role" styleClass="employee-header"/>
+        </f:facet>
+        <h:outputText value="#{e.role}" styleClass="employee-cell"/>
+    </h:column>
+
+</h:dataTable>
+
     
-<h:form>
-    <h:panelGrid columns="2">
-        <h:outputLabel value="Name:" for="name" />
-        <h:inputText id="name" value="#{employeeBean.newEmployee.name}" />
+<h:form styleClass="employee-form add-employee-form">
 
-        <h:outputLabel value="Department:" for="department" />
-        <h:inputText id="department" value="#{employeeBean.newEmployee.department}" />
+    <h:panelGrid columns="2" styleClass="employee-grid">
 
-        <h:outputLabel value="Office:" for="office" />
-        <h:inputText id="office" value="#{employeeBean.newEmployee.office}" />
+        <h:outputLabel value="Name:" for="name"
+                       styleClass="employee-label"/>
+        <h:inputText id="name"
+                     value="#{employeeBean.newEmployee.name}"
+                     styleClass="employee-input"/>
 
-        <h:outputLabel value="Role:" for="role" />
-        <h:inputText id="role" value="#{employeeBean.newEmployee.role}" />
+        <h:outputLabel value="Department:" for="department"
+                       styleClass="employee-label"/>
+        <h:inputText id="department"
+                     value="#{employeeBean.newEmployee.department}"
+                     styleClass="employee-input"/>
+
+        <h:outputLabel value="Office:" for="office"
+                       styleClass="employee-label"/>
+        <h:inputText id="office"
+                     value="#{employeeBean.newEmployee.office}"
+                     styleClass="employee-input"/>
+
+        <h:outputLabel value="Role:" for="role"
+                       styleClass="employee-label"/>
+        <h:inputText id="role"
+                     value="#{employeeBean.newEmployee.role}"
+                     styleClass="employee-input"/>
+
     </h:panelGrid>
 
-    <h:commandButton value="Add Employee" action="#{employeeBean.addEmployee}" />
+    <h:commandButton value="Add Employee"
+                     action="#{employeeBean.addEmployee}"
+                     styleClass="employee-button add-button--employee"/>
 </h:form>
 
 
-<h:form>
-    <h:panelGrid columns="2">
-        <h:outputLabel value="ID:" for="id" />
-        <h:inputText id="id" placeholder="id" value="#{employeeBean.id}" />
+
+<h:form styleClass="employee-form delete-employee-form">
+
+    <h:panelGrid columns="2" styleClass="employee-grid">
+
+        <h:outputLabel value="ID:" for="id"
+                       styleClass="employee-label--2"/>
+        <h:inputText id="id"
+                     placeholder="id"
+                     value="#{employeeBean.id}"
+                     styleClass="employee-input--2"/>
+
     </h:panelGrid>
-    <h:commandButton value="Delete Employee" action="#{employeeBean.deleteEmployee}" />
+
+    <h:commandButton value="Delete Employee"
+                     action="#{employeeBean.deleteEmployee}"
+                     styleClass="employee-button delete-button--employee"/>
 </h:form>
+
             </div>
 
             <div class="avaliable__dates">
 
                 <div class="avaliable__dates--general">
 
-                    <span class="date__text--1">Holiday</span>
-                    <span class="date__text--2">HRS</span>
+                     <span class="date__text--1">UPCOMING</span>
+                    <span class="date__text--2">EVENTS</span>
+                    
+                     <span class="canal canal--1">MONDAY : ESCAPE FROM HUMANS</span>
+                    <span class="canal canal--2">WEDNESDAY : BUBBLE PARTY</span>
+                    <span class="canal canal--3">FRIDAY : FEMALE RAINBOW FISH SHOWCASE </span>
+              		<span class="canal canal--4">SUNDAY: FUNDAY</span>
 
                     <div id="watch-container"></div>
 

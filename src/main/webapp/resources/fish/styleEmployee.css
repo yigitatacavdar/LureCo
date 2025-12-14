@@ -35,8 +35,9 @@ body {
    .fish__container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 20rem 80rem;
+    grid-template-rows: 20rem 60rem;
     min-height: 100vh;
+
    }
 
 
@@ -202,7 +203,7 @@ body {
 
 .header__bottom {
   display: grid;
-  /*grid-template-columns: minmax(10rem, 29rem) minmax(40rem, 1fr) minmax(10rem,29rem); ilk yaptığım*/
+  /*grid-template-columns: minmax(10rem, 29rem) minmax(40rem, 1fr) minmax(10rem,29rem);*/
   grid-template-columns: minmax(10rem, 29rem) 1fr 1fr 1fr minmax(10rem,29rem);
   grid-template-rows: 1fr;
   height: 5.5rem;
@@ -629,7 +630,7 @@ body {
 }
 
 .search-button--employee {
-  transform:translateX(60rem) translateY(-9rem);
+  transform:translateX(55rem) translateY(-4rem);
   padding: 8px 16px;
   cursor: pointer;
   font-size: 2rem;
@@ -661,6 +662,7 @@ body {
 
 .search-column {
   border: 3px groove #222;
+  height:1px;
 
 
 }
@@ -801,20 +803,16 @@ font-family: var(--brand-sans);
 
 .project-form {
   margin-top: 2rem;
-  
 }
 
 .project-grid {
   transform:translateY(-20rem);
-  
 }
 
 .project-label {
   font-size: 2rem;
   font-weight: 600;
   color: #222;
-  font-family: var(--brand-sans);
-  
 }
 
 .project-input {

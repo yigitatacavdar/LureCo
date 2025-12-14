@@ -9,7 +9,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ✅ GOOGLE FONTS (VALID XHTML) -->
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Playfair+Display:wght@600;800;900&amp;display=swap"
         rel="stylesheet" />
@@ -18,7 +17,6 @@
 
     <title>Menu</title>
 
-    <!-- ✅ CSS -->
     
 
 </h:head>
@@ -37,15 +35,13 @@
 
                 <div class="company__general">
                     <span class="text text--1">Thursday, January 1 , 2026</span>
-                    <span class="text text--2">Sea Harvest</span>
+                    <span class="text text--2">LureCo database management system</span>
                     <span class="text text--3">Just Released</span>
                 </div>
 
                 <div class="markets">
-                    <span class="canal canal--1">South canal</span>
-                    <span class="canal canal--2">Ohio canal</span>
-                    <span class="canal canal--3">Lousiana canal</span>
-              		<span class="canal canal--4">Coming Soon</span>
+                    
+              		<iframe src="https://free.timeanddate.com/clock/ia74i4nl/n680/szw110/szh110/hoc000/hbw3/hfc09f/cf100/hnc07c/hwc000/facfff/fdi76/mqcfff/mqs4/mqw4/mqd60/mhcfff/mhs4/mhl5/mhw4/mhd62/mmv0/hhcfff/hhs1/hhb10/hmcfff/hms1/hmb10/hscfff/hsw3" frameborder="0" width="110" height="110" styleClass="clockwise" ></iframe>
                 </div>
 
             </div>
@@ -101,55 +97,104 @@
 
 				       
 	
-   <h:dataTable value="#{officeBean.offices}" var="e" border="1">
-        <h:column>
-            <f:facet name="header">ID</f:facet>
-            #{e.id}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Name</f:facet>
-            #{e.name}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Location</f:facet>
-            #{e.location}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Max Capacity</f:facet>
-            #{e.maxCapacity}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Phone</f:facet>
-            #{e.phone}
-        </h:column>
-    </h:dataTable>
+ <h:dataTable value="#{officeBean.offices}" var="e" border="1"
+             styleClass="office-table">
+
+    <h:column styleClass="office-column">
+        <f:facet name="header">
+            <h:outputText value="ID" styleClass="office-header office-header--ID"/>
+        </f:facet>
+        <h:outputText value="#{e.id}" styleClass="office-cell"/>
+    </h:column>
+
+    <h:column styleClass="office-column">
+        <f:facet name="header">
+            <h:outputText value="Name" styleClass="office-header office-header--name"/>
+        </f:facet>
+        <h:outputText value="#{e.name}" styleClass="office-cell"/>
+    </h:column>
+
+    <h:column styleClass="office-column">
+        <f:facet name="header">
+            <h:outputText value="Location" styleClass="office-header office-header--location"/>
+        </f:facet>
+        <h:outputText value="#{e.location}" styleClass="office-cell"/>
+    </h:column>
+
+    <h:column styleClass="office-column">
+        <f:facet name="header">
+            <h:outputText value="Max Capacity" styleClass="office-header office-header--maxcapacity"/>
+        </f:facet>
+        <h:outputText value="#{e.maxCapacity}" styleClass="office-cell"/>
+    </h:column>
+
+    <h:column styleClass="office-column">
+        <f:facet name="header">
+            <h:outputText value="Phone" styleClass="office-header office-header--phone"/>
+        </f:facet>
+        <h:outputText value="#{e.phone}" styleClass="office-cell"/>
+    </h:column>
+
+</h:dataTable>
+
     
-<h:form>
-    <h:panelGrid columns="2">
-        <h:outputLabel value="Name:" for="name" />
-        <h:inputText id="name" value="#{officeBean.newOffice.name}" />
+<h:form styleClass="office-form add-office-form">
 
-        <h:outputLabel value="Location:" for="location" />
-        <h:inputText id="location" value="#{officeBean.newOffice.location}" />
+    <h:panelGrid columns="2" styleClass="office-grid">
 
-        <h:outputLabel value="Max Capacity:" for="maxCapacity" />
-        <h:inputText id="maxCapacity" value="#{officeBean.newOffice.maxCapacity}" />
+        <h:outputLabel value="Name:" for="name"
+                       styleClass="office-label"/>
+        <h:inputText id="name"
+                     value="#{officeBean.newOffice.name}"
+                     styleClass="office-input"/>
 
-        <h:outputLabel value="Phone:" for="phone" />
-        <h:inputText id="phone" value="#{officeBean.newOffice.phone}" />
+        <h:outputLabel value="Location:" for="location"
+                       styleClass="office-label"/>
+        <h:inputText id="location"
+                     value="#{officeBean.newOffice.location}"
+                     styleClass="office-input"/>
+
+        <h:outputLabel value="Max Capacity:" for="maxCapacity"
+                       styleClass="office-label"/>
+        <h:inputText id="maxCapacity"
+                     value="#{officeBean.newOffice.maxCapacity}"
+                     styleClass="office-input"/>
+
+        <h:outputLabel value="Phone:" for="phone"
+                       styleClass="office-label"/>
+        <h:inputText id="phone"
+                     value="#{officeBean.newOffice.phone}"
+                     styleClass="office-input"/>
+
     </h:panelGrid>
 
-    <h:commandButton value="Add Office" action="#{officeBean.addOffice}" />
+    <h:commandButton value="Add Office"
+                     action="#{officeBean.addOffice}"
+                     styleClass="office-button add-button"/>
+
 </h:form>
 
 
-<h:form>
-    <h:panelGrid columns="2">
-        <h:outputLabel value="ID:" for="id" />
-        <h:inputText id="id" placeholder="id" value="#{officeBean.id}" />
+
+<h:form styleClass="office-form delete-office-form">
+
+    <h:panelGrid columns="2" styleClass="office-grid">
+
+        <h:outputLabel value="ID:" for="id"
+                       styleClass="office-label--2"/>
+        <h:inputText id="id"
+                     placeholder="id"
+                     value="#{officeBean.id}"
+                     styleClass="office-input--2"/>
+
     </h:panelGrid>
-    <h:commandButton value="Delete Office" action="#{officeBean.deleteOffice}" />
+
+    <h:commandButton value="Delete Office"
+                     action="#{officeBean.deleteOffice}"
+                     styleClass="office-button delete-button"/>
+
 </h:form>
+
 
 
 
@@ -159,8 +204,13 @@
 
                 <div class="avaliable__dates--general">
 
-                    <span class="date__text--1">Holiday</span>
-                    <span class="date__text--2">HRS</span>
+                    <span class="date__text--1">UPCOMING</span>
+                    <span class="date__text--2">EVENTS</span>
+                    
+                     <span class="canal canal--1">MONDAY : ESCAPE FROM HUMANS</span>
+                    <span class="canal canal--2">WEDNESDAY : BUBBLE PARTY</span>
+                    <span class="canal canal--3">FRIDAY : FEMALE RAINBOW FISH SHOWCASE </span>
+              		<span class="canal canal--4">SUNDAY: FUNDAY</span>
 
                     <div id="watch-container"></div>
 
@@ -173,10 +223,7 @@
         <div class="getin--touch__section"></div>
         <div class="footer__section"></div>
 
-    </header>
-
-    <!-- ✅ JS MODULES -->
-    
+    </header>    
     
     <script src="https://unpkg.com/three@0.160.1/build/three.min.js"></script>
 <script src="https://unpkg.com/three@0.160.1/examples/js/loaders/GLTFLoader.js"></script>

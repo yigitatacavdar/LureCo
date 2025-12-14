@@ -9,7 +9,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ✅ GOOGLE FONTS (VALID XHTML) -->
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Playfair+Display:wght@600;800;900&amp;display=swap"
         rel="stylesheet" />
@@ -18,7 +17,6 @@
 
     <title>Menu</title>
 
-    <!-- ✅ CSS -->
     
 
 </h:head>
@@ -37,15 +35,13 @@
 
                 <div class="company__general">
                     <span class="text text--1">Thursday, January 1 , 2026</span>
-                    <span class="text text--2">Sea Harvest</span>
+                    <span class="text text--2">LureCo database management system</span>
                     <span class="text text--3">Just Released</span>
                 </div>
 
                 <div class="markets">
-                    <span class="canal canal--1">South canal</span>
-                    <span class="canal canal--2">Ohio canal</span>
-                    <span class="canal canal--3">Lousiana canal</span>
-              		<span class="canal canal--4">Coming Soon</span>
+                    
+              		<iframe src="https://free.timeanddate.com/clock/ia74i4nl/n680/szw110/szh110/hoc000/hbw3/hfc09f/cf100/hnc07c/hwc000/facfff/fdi76/mqcfff/mqs4/mqw4/mqd60/mhcfff/mhs4/mhl5/mhw4/mhd62/mmv0/hhcfff/hhs1/hhb10/hmcfff/hms1/hmb10/hscfff/hsw3" frameborder="0" width="110" height="110" styleClass="clockwise" ></iframe>
                 </div>
 
             </div>
@@ -98,66 +94,109 @@
         <div class="info__section">
 
             <div class="all__in__section"  >
-            
+    <h2 class="project-title">Projects List</h2>
 
+<h:dataTable value="#{projectBean.projects}"
+             var="e"
+             border="1"
+             styleClass="project-table">
+
+    <h:column styleClass="project-column">
+        <f:facet name="header">
+            <h:outputText value="ID" styleClass="project-header"/>
+        </f:facet>
+        <h:outputText value="#{e.id}" styleClass="project-cell"/>
+    </h:column>
+
+    <h:column styleClass="project-column">
+        <f:facet name="header">
+            <h:outputText value="Name" styleClass="project-header"/>
+        </f:facet>
+        <h:outputText value="#{e.name}" styleClass="project-cell"/>
+    </h:column>
+
+    <h:column styleClass="project-column">
+        <f:facet name="header">
+            <h:outputText value="Department" styleClass="project-header"/>
+        </f:facet>
+        <h:outputText value="#{e.department}" styleClass="project-cell"/>
+    </h:column>
+
+    <h:column styleClass="project-column">
+        <f:facet name="header">
+            <h:outputText value="Project Head" styleClass="project-header"/>
+        </f:facet>
+        <h:outputText value="#{e.projectHead}" styleClass="project-cell"/>
+    </h:column>
+
+</h:dataTable>
+    
+    
+    <h:form styleClass="project-form add-project-form">
+
+    <h:panelGrid columns="2" styleClass="project-grid">
+
+        <h:outputLabel value="Name:" for="name"
+                       styleClass="project-label"/>
+        <h:inputText id="name"
+                     value="#{projectBean.newProject.name}"
+                     styleClass="project-input"/>
+
+        <h:outputLabel value="Department:" for="department"
+                       styleClass="project-label"/>
+        <h:inputText id="department"
+                     value="#{projectBean.newProject.department}"
+                     styleClass="project-input"/>
+
+        <h:outputLabel value="Project Head:" for="projectHead"
+                       styleClass="project-label"/>
+        <h:inputText id="projectHead"
+                     value="#{projectBean.newProject.projectHead}"
+                     styleClass="project-input"/>
+
+    </h:panelGrid>
+
+    <h:commandButton value="Add Project"
+                     action="#{projectBean.addProject}"
+                     styleClass="project-button add-button--project"/>
+</h:form>
+    
+    
+    <h:form styleClass="project-form delete-project-form">
+
+    <h:panelGrid columns="2" styleClass="project-grid">
+
+        <h:outputLabel value="ID:" for="id"
+                       styleClass="project-label"/>
+        <h:inputText id="id"
+                     placeholder="id"
+                     value="#{projectBean.id}"
+                     styleClass="project-input project--input--2"/>
+
+    </h:panelGrid>
+
+    <h:commandButton value="Delete Project"
+                     action="#{projectBean.deleteProject}"
+                     styleClass="project-button delete-button--project"/>
+</h:form>
+            
+	
 				       
 	
-   <h2>Projects List</h2>
-
-    <h:dataTable value="#{projectBean.projects}" var="e" border="1">
-        <h:column>
-            <f:facet name="header">ID</f:facet>
-            #{e.id}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Name</f:facet>
-            #{e.name}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Department</f:facet>
-            #{e.department}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Project Head</f:facet>
-            #{e.projectHead}
-        </h:column>
-    </h:dataTable>
-    
-<h:form>
-    <h:panelGrid columns="2">
-        <h:outputLabel value="Name:" for="name" />
-        <h:inputText id="name" value="#{projectBean.newProject.name}" />
-
-        <h:outputLabel value="Department:" for="department" />
-        <h:inputText id="department" value="#{projectBean.newProject.department}" />
-
-        <h:outputLabel value="Project Head:" for="projectHead" />
-        <h:inputText id="projectHead" value="#{projectBean.newProject.projectHead}" />
-    </h:panelGrid>
-
-    <h:commandButton value="Add Project" action="#{projectBean.addProject}" />
-</h:form>
-
-
-<h:form>
-    <h:panelGrid columns="2">
-        <h:outputLabel value="ID:" for="id" />
-        <h:inputText id="id" placeholder="id" value="#{projectBean.id}" />
-    </h:panelGrid>
-    <h:commandButton value="Delete Project" action="#{projectBean.deleteProject}" />
-</h:form>
    
-
-
-
             </div>
 
             <div class="avaliable__dates">
 
                 <div class="avaliable__dates--general">
 
-                    <span class="date__text--1">Holiday</span>
-                    <span class="date__text--2">HRS</span>
+                    <span class="date__text--1">UPCOMING</span>
+                    <span class="date__text--2">EVENTS</span>
+                    
+                     <span class="canal canal--1">MONDAY : ESCAPE FROM HUMANS</span>
+                    <span class="canal canal--2">WEDNESDAY : BUBBLE PARTY</span>
+                    <span class="canal canal--3">FRIDAY : FEMALE RAINBOW FISH SHOWCASE </span>
+              		<span class="canal canal--4">SUNDAY: FUNDAY</span>
 
                     <div id="watch-container"></div>
 
@@ -172,7 +211,6 @@
 
     </header>
 
-    <!-- ✅ JS MODULES -->
     
     
     <script src="https://unpkg.com/three@0.160.1/build/three.min.js"></script>
