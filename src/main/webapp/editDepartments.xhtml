@@ -102,7 +102,7 @@
 <h:dataTable value="#{departmentBean.departments}"
              var="e"
              border="1"
-             styleClass="department-table">
+             styleClass="department-table" style="transform:translateY(35rem); ">
 
     <h:column styleClass="department-column">
         <f:facet name="header">
@@ -128,7 +128,7 @@
 </h:dataTable>
 
     
-<h:form styleClass="department-form add-department-form">
+<h:form styleClass="department-form add-department-form" style="transform:translateY(-30rem); ">
 
     <h:panelGrid columns="2" styleClass="department-grid">
 
@@ -152,7 +152,7 @@
 </h:form>
 
 
-<h:form styleClass="department-form delete-department-form">
+<h:form styleClass="department-form delete-department-form" style="transform:translateX(70rem) translateY(-45rem); ">
 
     <h:panelGrid columns="2" styleClass="department-grid">
 
@@ -161,7 +161,7 @@
         <h:inputText id="id"
                      placeholder="id"
                      value="#{departmentBean.id}"
-                     styleClass="department-input department-input--2"/>
+                     styleClass="department-input--2"/>
 
     </h:panelGrid>
 

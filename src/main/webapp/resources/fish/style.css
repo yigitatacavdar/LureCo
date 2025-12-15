@@ -12,6 +12,8 @@
   --serif-display: 'Playfair Display', serif;   
   --brand-sans: 'Bebas Neue', sans-serif;       
   --logo-script: 'Cormorant Garamond', serif; 
+   --table-font: 'Inter', system-ui, sans-serif;
+  
 }
 
 html {
@@ -35,8 +37,8 @@ body {
    .fish__container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 20rem 80rem;
-    min-height: 100vh;
+    grid-template-rows: 20rem 50rem;
+    max-height: 90vh;
    }
 
 
@@ -46,6 +48,7 @@ body {
     grid-row: 1 / 2;
     border: 3px groove #362e2e;
     height: 20rem;
+    
   
    }
 
@@ -59,6 +62,7 @@ body {
     align-items: center;
     
     
+    
    }
    .logo__box {
   display: flex;
@@ -69,7 +73,6 @@ body {
   border-bottom: 3px groove #222;
   overflow: hidden;
   
- 
 }
 
 #logo {
@@ -165,6 +168,17 @@ body {
   
 }
 
+.canal--index {
+  
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: var(--brand-sans);
+  font-weight: 900;
+  font-size: 2rem;
+  border-bottom: 3px groove #362e2e;
+  transform: translateY(-12rem);
+}
+
 .canal {
   
   letter-spacing: 1px;
@@ -174,6 +188,27 @@ body {
   font-size: 2rem;
   border-bottom: 3px groove #362e2e;
   transform: translateY(-6rem);
+}
+
+
+.canal--1--index {
+  display: block;
+  margin:1rem;
+  
+}
+
+.canal--2--index {
+  display: block; /* kullanmasam da olur */
+  margin:1rem;
+}
+
+.canal--3--index {
+  display: block;
+  margin:1rem;
+}
+.canal--4--index {
+  display: block; 
+  margin:1rem;
 }
 
 
@@ -236,29 +271,6 @@ body {
 
 
 
-.btn:hover::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  animation-name: fishbuttonY;
-  animation: fishbuttonY 1s forwards;
-
-}
-
-@keyframes fishbuttonY {
-  0% {
-    transform: translateY(0);
-  }
-
-
-  100% {
-    transform: translateY(-6px);
-  }
-  
-}
 
 
 
@@ -307,9 +319,9 @@ body {
   grid-column: 1 / 7;
   grid-row: 2 /3;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(2, minmax(25rem, 1fr));
+  grid-template-rows: repeat(2, minmax(29.5rem, 1fr));
   
-  min-height: 60rem;
+ 
   
 }
 
@@ -320,6 +332,10 @@ body {
    grid-template-rows: repeat(2, 1fr);
    border-right: 3px solid #222;
    position:relative;
+    overflow-y: scroll;
+   
+   
+   
   
 }
 
@@ -366,14 +382,7 @@ body {
   padding-bottom: 0rem;
 }
 
-#watch-container {
-  position: relative;
-  width: 33rem;  
-  height: 27rem;
-  top: -11rem;
-  left: 6rem;
-  overflow: hidden;
-}
+
 
 #watch-container canvas {
   width: 60% !important;
@@ -395,6 +404,36 @@ body {
   letter-spacing: .8rem;   
   
 }
+
+
+.date__text--1--index {
+	
+  font-family: var(--table-font);
+  font-weight: 800;
+  font-size: 8rem;
+  width: auto;
+  height: auto;
+  letter-spacing: .8rem;
+  transform:translateY(-6rem);   
+	
+	
+}
+
+
+.date__text--2--index {
+  font-family: var(--table-font);
+  font-weight: 800;
+  font-size: 8rem;
+  width: auto;
+  height: auto;
+  letter-spacing: .8rem; 
+  transform:translateY(-10rem);  
+	
+
+ 
+}
+
+
 .date__text--2 {
   font-family: var(--logo-script);
   font-weight: 800;
@@ -408,25 +447,7 @@ body {
 
 
 
-.avaliable__dates--general::before,
-.avaliable__dates--general::after {
-  content: "";
-  position: absolute;
-  inset: 3rem;
-  background:
 
-    repeating-linear-gradient(to right, #173b8f 0 8px, transparent 8px 16px) top / 100% 1px no-repeat,
-
-
-    repeating-linear-gradient(to right, #173b8f 0 8px, transparent 8px 16px) bottom / 100% 1px no-repeat,
-
-
-    repeating-linear-gradient(to bottom, #173b8f 0 8px, transparent 8px 16px) left / 1px 100% no-repeat,
-
- 
-    repeating-linear-gradient(to bottom, #173b8f 0 8px, transparent 8px 16px) right / 1px 100% no-repeat;
-  pointer-events: none;
-}
 
 
 
@@ -436,22 +457,107 @@ body {
 	
 }
 
+.login-label {
+	font-family: var(--brand-sans);
+	font-size:3rem;
+	letter-spacing: 1.2px;
+	
+}
+
+.login-input {
+	border: 3px groove #222;
+	height:3rem;
+	 background:url("/LureCo/resources/public/project1.png");
+	 	font-family: var(--brand-sans);
+	 
+}
+
+
+.login-form {
+	transform:translateY(-22rem) translateX(-15rem);
+}
+
+
+   .logo__box--2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60rem;
+  width:100%;
+  transform:translateY(0rem);
+  border-right: 3px groove #222;
+  border-bottom: 3px groove #222;
+  overflow: hidden;
+  
+}
+
+
+#logo--2 {
+  height: 100%;
+  width: auto;
+  max-height: 100%;
+
+ 
+}
+
+#logo--2 svg {
+	transform:scale(2);
+  width: 100%;
+  height: 100%;
+  
+  display: block;
+  
+}
+
+
+
+
+
+
+.login-button {
+	border: 3px groove #222;
+	 background:url("/LureCo/resources/public/project1.png");
+	 padding: .8rem 4.4rem;
+	 font-size:3rem;
+	letter-spacing: 1.2px;
+	transform:translateX(5rem) translateY(1rem);
+	font-family: var(--brand-sans);
+	
+	
+}
+
+.login-messages {
+	font-size:3rem;
+	letter-spacing: 1.2px;
+		font-family: var(--brand-sans);
+	
+	
+}
+
 
 .office-table {
+	
 	margin-top : 3rem;
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: no-collapse;
+   color: #222;
+  font-family: var(--table-font);
+  position:relative;
+  
+  
+  
   
 }
 
 .office-column {
-	border: 2px groove #222;
+	border: 3px groove #222;
+	
 	
 }
 
 
 .office-cell {
-	font-family: var(--brand-sans);
+	font-family: var(--table-font);
 	letter-spacing: 1.2px;
 }
 
@@ -459,7 +565,8 @@ body {
   color: #111;
   font-size:3rem;
   font-weight: 900;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
+  
 }
 
 
@@ -472,7 +579,7 @@ body {
   color: #111;
   
   padding: 2.9px;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 }
 
 
@@ -481,7 +588,7 @@ body {
   color: #111;
   
   padding: 2.9px;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 }
 
 
@@ -491,7 +598,7 @@ body {
   color: #111;
   
   padding: 2.9px;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 }
 
 
@@ -501,7 +608,7 @@ body {
   color: #111;
 
   padding: 2.9px;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 }
 
 
@@ -517,28 +624,28 @@ body {
 
 
 .office-form {
-  margin-top: 20px;
+	
 }
 
 .office-grid {
   gap: 10px;
+  
 }
 
 .office-label {
   font-size: 2rem;
   font-weight: 600;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
  	
   
 }
 
 .office-label--2 {
-  position:relative;
+
   font-size: 2rem;
   font-weight: 600;
-  font-family: var(--brand-sans);
-  left:68rem;
-  top:-30rem;
+  font-family: var(--table-font);
+  
  	
   
 }
@@ -547,14 +654,26 @@ body {
   padding: 6px;
    background:url("/LureCo/resources/public/project1.png");
    width: 40rem;
+   color: #222;
+   font-size: 2rem;
+   
    
 }
+
+.delete-office-form {
+	transform:translateX(60rem) translateY(-18rem);
+	width:10%;
+	
+}
+
+
+
 
 .office-input--2 {
   padding: 6px;
    background:url("/LureCo/resources/public/project1.png");
    width: 10rem;
-   transform:translateX(68rem) translateY(-30rem);
+  
 }
 
 .office-button {
@@ -569,14 +688,15 @@ body {
 
 .add-button {
   background:url("/LureCo/resources/public/project1.png");
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
+  transform: translateX(17rem);
 
 }
 
 .delete-button {
   background:url("/LureCo/resources/public/project1.png");
-  transform:  translateY(-30rem) translateX(70rem);
-  font-family: var(--brand-sans);
+  transform:translateX(2rem);
+  font-family: var(--table-font);
   
 }
 
@@ -589,7 +709,7 @@ body {
   font-size: 3rem;
   font-weight: bold;
   color: #222;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
   
   
   
@@ -613,7 +733,7 @@ body {
   font-weight: 600;
   color: #222;
   transform:translateY(-5rem);
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
   
 }
 
@@ -624,12 +744,15 @@ body {
   width: 40rem;
   background: url("/LureCo/resources/public/project1.png");
   color: #222;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 
 }
 
+
+
+
 .search-button--employee {
-  transform:translateX(60rem) translateY(-9rem);
+  transform:translateX(60rem) translateY(-5rem);
   padding: 8px 16px;
   cursor: pointer;
   font-size: 2rem;
@@ -645,7 +768,7 @@ body {
   font-size: 2rem;
   background: url("/LureCo/resources/public/project1.png");
   color: #222;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 
 }
 
@@ -655,6 +778,7 @@ body {
   width: 100%;
   max-height: 100%; 
   border-collapse: no-collapse;
+  
   
   
 }
@@ -669,14 +793,14 @@ body {
   font-weight: bold;
   color: #111;
   font-size: 3rem;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 }
 
 .search-cell {
   padding: 6px;
   font-size: 2rem;
   color: #111;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 }
 
 
@@ -686,13 +810,12 @@ body {
   font-size: 3rem;
   font-weight: bold;
   color: #222;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 }
 
 .department-table {
-  transform:translateY(-23rem);
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: no-collapse;
 }
 
 .department-column {
@@ -701,7 +824,7 @@ body {
 
 .department-header {
   font-weight: bold;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
   color: #111;
   font-size: 3rem;
   
@@ -711,23 +834,24 @@ body {
   padding: 6px;
   font-size: 2rem;
   color: #222;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 }
 
 .department-form {
   margin-top: 2rem;
-  transform:translateY(-23rem);
 }
 
 .department-grid {
   gap: 10px;
+  
 }
 
 .department-label {
   font-size: 2rem;
   font-weight: 600;
   color: #222;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
+  
 }
 
 .department-input {
@@ -737,6 +861,16 @@ body {
   background: url("/LureCo/resources/public/project1.png");
   color: #222;
   
+}
+
+.department-input--2 {
+	 padding: 6px;
+  font-size: 2rem;
+  width: 5rem;
+  background: url("/LureCo/resources/public/project1.png");
+  color: #222;
+  
+	
 }
 
 .department-button {
@@ -750,18 +884,22 @@ body {
 }
 
 .delete-department-form {
-  transform: translateY(-29.5rem) translateX(25rem);
+ transform:translateX(70rem) translateY(-15rem);
+ width:10%;
 }
+
+
 
 
 .delete-button--department {
-	transform:translateX(45rem) translateY(-5rem);
-	font-family: var(--brand-sans);
+	width:5rem;
+	font-family: var(--table-font);
 }
 
 .delete-button--2 {
-		font-family: var(--brand-sans);
+		font-family: var(--table-font);
 		transform:translateX(2rem);
+		
 	
 }
 
@@ -771,14 +909,13 @@ body {
   font-size: 3rem;
   font-weight: bold;
   color: #222;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 }
 
 .project-table {
   margin-top: 3rem;
   width: 100%;
-  border-collapse: collapse;
-  transform: translateY(-20rem);
+  border-collapse: no-collapse;
 }
 
 .project-column {
@@ -787,7 +924,7 @@ body {
 
 .project-header {
   font-weight: bold;
-font-family: var(--brand-sans);
+font-family: var(--table-font);
   color: #111;
   font-size: 3rem;
 }
@@ -796,7 +933,7 @@ font-family: var(--brand-sans);
   padding: 6px;
   font-size: 2rem;
   color: #222;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 }
 
 .project-form {
@@ -805,17 +942,21 @@ font-family: var(--brand-sans);
 }
 
 .project-grid {
-  transform:translateY(-20rem);
+  
   
 }
 
 .project-label {
+
   font-size: 2rem;
   font-weight: 600;
   color: #222;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
+
   
 }
+
+
 
 .project-input {
   padding: 6px;
@@ -823,9 +964,20 @@ font-family: var(--brand-sans);
   width: 40rem;
   background: url("/LureCo/resources/public/project1.png");
   color: #222;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
  
 
+}
+
+.project--input--2 {
+	padding: 6px;
+  font-size: 2rem;
+  width:10rem;
+  background: url("/LureCo/resources/public/project1.png");
+  color: #222;
+  font-family: var(--table-font);
+  
+	
 }
 
 .project-button {
@@ -835,25 +987,48 @@ font-family: var(--brand-sans);
   font-size: 2rem;
   background: url("/LureCo/resources/public/project1.png");
   color: #222;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 
 }
 
 .delete-project-form {
-  transform: translateY(-7rem);
-  font-family: var(--brand-sans);
+  
+
 }
 
 
 .add-button--project {
-	transform: translateY(-15rem);
+
 	
 }
 
 .delete-button--project {
-	transform: translateY(-20rem) translateX(15rem);
+	
+	
 		
 }
+
+
+
+.all__in__section::-webkit-scrollbar {
+  width: 10px;
+}
+
+.all__in__section::-webkit-scrollbar-track {
+  background: #;
+}
+
+.all__in__section::-webkit-scrollbar-thumb {
+    background: url("/LureCo/resources/public/project1.png");
+     border: 2px solid #222;
+  border-radius: 6px;
+}
+
+.all__in__section::-webkit-scrollbar-thumb:hover {
+  background: #00ffff;
+}
+
+
 
 
 .employee-title {
@@ -861,13 +1036,13 @@ font-family: var(--brand-sans);
   font-size: 3rem;
   font-weight: bold;
   color: #222;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 }
 
 .employee-table {
   margin-top: 3rem;
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: no-collapse;
   transform:translateY(-5rem);
 }
 
@@ -879,14 +1054,14 @@ font-family: var(--brand-sans);
   font-weight: 900;
   color: #222;
   font-size: 3rem;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 }
 
 .employee-cell {
   padding: 6px;
   font-size: 2rem;
   color: #222;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 }
 
 .employee-form {
@@ -902,7 +1077,7 @@ font-family: var(--brand-sans);
   font-size: 2rem;
   font-weight: 600;
   color: #222;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 }
 
 .employee-label--2 {
@@ -921,7 +1096,7 @@ font-family: var(--brand-sans);
   width: 40rem;
   background: url("/LureCo/resources/public/project1.png");
   color: #222;
-  font-family: var(--brand-sans);
+  font-family: var(--table-font:);
   
   
 }
@@ -951,7 +1126,7 @@ font-family: var(--brand-sans);
 
 .delete-employee-form {
 	transform:translateY(-20rem);	
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
   
 }
 
@@ -962,7 +1137,7 @@ font-family: var(--brand-sans);
 .add-button--employee {
 	
 	background-image:url("/LureCo/resources/public/project1.png");
-  font-family: var(--brand-sans);
+  font-family: var(--table-font);
 	  
 	  
 }

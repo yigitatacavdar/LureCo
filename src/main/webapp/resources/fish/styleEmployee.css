@@ -35,9 +35,8 @@ body {
    .fish__container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 20rem 60rem;
-    min-height: 100vh;
-
+    grid-template-rows: 20rem 50rem;
+    max-height: 90vh;
    }
 
 
@@ -47,6 +46,7 @@ body {
     grid-row: 1 / 2;
     border: 3px groove #362e2e;
     height: 20rem;
+    
   
    }
 
@@ -60,6 +60,7 @@ body {
     align-items: center;
     
     
+    
    }
    .logo__box {
   display: flex;
@@ -70,7 +71,6 @@ body {
   border-bottom: 3px groove #222;
   overflow: hidden;
   
- 
 }
 
 #logo {
@@ -166,6 +166,17 @@ body {
   
 }
 
+.canal--index {
+  
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: var(--brand-sans);
+  font-weight: 900;
+  font-size: 2rem;
+  border-bottom: 3px groove #362e2e;
+  transform: translateY(-12rem);
+}
+
 .canal {
   
   letter-spacing: 1px;
@@ -175,6 +186,27 @@ body {
   font-size: 2rem;
   border-bottom: 3px groove #362e2e;
   transform: translateY(-6rem);
+}
+
+
+.canal--1--index {
+  display: block;
+  margin:1rem;
+  
+}
+
+.canal--2--index {
+  display: block; /* kullanmasam da olur */
+  margin:1rem;
+}
+
+.canal--3--index {
+  display: block;
+  margin:1rem;
+}
+.canal--4--index {
+  display: block; 
+  margin:1rem;
 }
 
 
@@ -203,7 +235,7 @@ body {
 
 .header__bottom {
   display: grid;
-  /*grid-template-columns: minmax(10rem, 29rem) minmax(40rem, 1fr) minmax(10rem,29rem);*/
+  /*grid-template-columns: minmax(10rem, 29rem) minmax(40rem, 1fr) minmax(10rem,29rem); ilk yaptığım*/
   grid-template-columns: minmax(10rem, 29rem) 1fr 1fr 1fr minmax(10rem,29rem);
   grid-template-rows: 1fr;
   height: 5.5rem;
@@ -237,29 +269,6 @@ body {
 
 
 
-.btn:hover::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  animation-name: fishbuttonY;
-  animation: fishbuttonY 1s forwards;
-
-}
-
-@keyframes fishbuttonY {
-  0% {
-    transform: translateY(0);
-  }
-
-
-  100% {
-    transform: translateY(-6px);
-  }
-  
-}
 
 
 
@@ -308,9 +317,9 @@ body {
   grid-column: 1 / 7;
   grid-row: 2 /3;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(2, minmax(25rem, 1fr));
+  grid-template-rows: repeat(2, minmax(29.5rem, 1fr));
   
-  min-height: 60rem;
+ 
   
 }
 
@@ -321,6 +330,10 @@ body {
    grid-template-rows: repeat(2, 1fr);
    border-right: 3px solid #222;
    position:relative;
+    overflow-y: scroll;
+   
+   
+   
   
 }
 
@@ -367,14 +380,7 @@ body {
   padding-bottom: 0rem;
 }
 
-#watch-container {
-  position: relative;
-  width: 33rem;  
-  height: 27rem;
-  top: -11rem;
-  left: 6rem;
-  overflow: hidden;
-}
+
 
 #watch-container canvas {
   width: 60% !important;
@@ -396,6 +402,36 @@ body {
   letter-spacing: .8rem;   
   
 }
+
+
+.date__text--1--index {
+	
+  font-family: var(--brand-sans);
+  font-weight: 800;
+  font-size: 8rem;
+  width: auto;
+  height: auto;
+  letter-spacing: .8rem;
+  transform:translateY(-6rem);   
+	
+	
+}
+
+
+.date__text--2--index {
+  font-family: var(--brand-sans);
+  font-weight: 800;
+  font-size: 8rem;
+  width: auto;
+  height: auto;
+  letter-spacing: .8rem; 
+  transform:translateY(-10rem);  
+	
+
+ 
+}
+
+
 .date__text--2 {
   font-family: var(--logo-script);
   font-weight: 800;
@@ -409,25 +445,7 @@ body {
 
 
 
-.avaliable__dates--general::before,
-.avaliable__dates--general::after {
-  content: "";
-  position: absolute;
-  inset: 3rem;
-  background:
 
-    repeating-linear-gradient(to right, #173b8f 0 8px, transparent 8px 16px) top / 100% 1px no-repeat,
-
-
-    repeating-linear-gradient(to right, #173b8f 0 8px, transparent 8px 16px) bottom / 100% 1px no-repeat,
-
-
-    repeating-linear-gradient(to bottom, #173b8f 0 8px, transparent 8px 16px) left / 1px 100% no-repeat,
-
- 
-    repeating-linear-gradient(to bottom, #173b8f 0 8px, transparent 8px 16px) right / 1px 100% no-repeat;
-  pointer-events: none;
-}
 
 
 
@@ -437,16 +455,95 @@ body {
 	
 }
 
+.login-label {
+	font-family: var(--brand-sans);
+	font-size:3rem;
+	letter-spacing: 1.2px;
+	
+}
+
+.login-input {
+	border: 3px groove #222;
+	height:3rem;
+	 background:url("/LureCo/resources/public/project1.png");
+	 	font-family: var(--brand-sans);
+	 
+}
+
+
+.login-form {
+	transform:translateY(-22rem) translateX(-15rem);
+}
+
+
+   .logo__box--2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60rem;
+  width:100%;
+  transform:translateY(0rem);
+  border-right: 3px groove #222;
+  border-bottom: 3px groove #222;
+  overflow: hidden;
+  
+}
+
+
+#logo--2 {
+  height: 100%;
+  width: auto;
+  max-height: 100%;
+
+ 
+}
+
+#logo--2 svg {
+	transform:scale(2);
+  width: 100%;
+  height: 100%;
+  
+  display: block;
+  
+}
+
+
+
+
+
+
+.login-button {
+	border: 3px groove #222;
+	 background:url("/LureCo/resources/public/project1.png");
+	 padding: .8rem 4.4rem;
+	 font-size:3rem;
+	letter-spacing: 1.2px;
+	transform:translateX(5rem) translateY(1rem);
+	font-family: var(--brand-sans);
+	
+	
+}
+
+.login-messages {
+	font-size:3rem;
+	letter-spacing: 1.2px;
+		font-family: var(--brand-sans);
+	
+	
+}
+
 
 .office-table {
 	margin-top : 3rem;
   width: 100%;
   border-collapse: collapse;
+   color: #222;
+  font-family: var(--brand-sans);
   
 }
 
 .office-column {
-	border: 2px groove #222;
+	border: 3px groove #222;
 	
 }
 
@@ -548,8 +645,14 @@ body {
   padding: 6px;
    background:url("/LureCo/resources/public/project1.png");
    width: 40rem;
+   color: #222;
+   font-size: 2rem;
    
 }
+
+
+
+
 
 .office-input--2 {
   padding: 6px;
@@ -629,8 +732,11 @@ body {
 
 }
 
+
+
+
 .search-button--employee {
-  transform:translateX(55rem) translateY(-4rem);
+  transform:translateX(60rem) translateY(-9rem);
   padding: 8px 16px;
   cursor: pointer;
   font-size: 2rem;
@@ -658,11 +764,11 @@ body {
   border-collapse: no-collapse;
   
   
+  
 }
 
 .search-column {
   border: 3px groove #222;
-  height:1px;
 
 
 }
@@ -803,16 +909,20 @@ font-family: var(--brand-sans);
 
 .project-form {
   margin-top: 2rem;
+  
 }
 
 .project-grid {
   transform:translateY(-20rem);
+  
 }
 
 .project-label {
   font-size: 2rem;
   font-weight: 600;
   color: #222;
+  font-family: var(--brand-sans);
+  
 }
 
 .project-input {

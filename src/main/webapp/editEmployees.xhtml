@@ -9,7 +9,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ✅ GOOGLE FONTS (VALID XHTML) -->
+    
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Playfair+Display:wght@600;800;900&amp;display=swap"
         rel="stylesheet" />
@@ -103,7 +103,7 @@
 <h:dataTable value="#{employeeBean.employees}"
              var="e"
              border="1"
-             styleClass="employee-table">
+             styleClass="employee-table" style="transform:translateY(40rem); ">
 
     <h:column styleClass="employee-column">
         <f:facet name="header">
@@ -143,9 +143,9 @@
 </h:dataTable>
 
     
-<h:form styleClass="employee-form add-employee-form">
+<h:form styleClass="employee-form add-employee-form ">
 
-    <h:panelGrid columns="2" styleClass="employee-grid">
+    <h:panelGrid columns="2" styleClass="employee-grid" style="transform:translateY(-55rem); ">
 
         <h:outputLabel value="Name:" for="name"
                        styleClass="employee-label"/>
@@ -175,12 +175,12 @@
 
     <h:commandButton value="Add Employee"
                      action="#{employeeBean.addEmployee}"
-                     styleClass="employee-button add-button--employee"/>
+                     styleClass="employee-button add-button--employee" style="transform:translateY(-55rem); "/>
 </h:form>
 
 
 
-<h:form styleClass="employee-form delete-employee-form">
+<h:form styleClass="employee-form delete-employee-form" style="transform:translateY(-80rem); ">
 
     <h:panelGrid columns="2" styleClass="employee-grid">
 
@@ -225,11 +225,9 @@
 
     </header>
 
-    <!-- ✅ JS MODULES -->
+ 
     
     
-    <script src="https://unpkg.com/three@0.160.1/build/three.min.js"></script>
-<script src="https://unpkg.com/three@0.160.1/examples/js/loaders/GLTFLoader.js"></script>
 
 <h:outputScript library="fish" name="main__2.js" type="module" />
 

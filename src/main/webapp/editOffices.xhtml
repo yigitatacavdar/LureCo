@@ -98,7 +98,7 @@
 				       
 	
  <h:dataTable value="#{officeBean.offices}" var="e" border="1"
-             styleClass="office-table">
+             styleClass="office-table" style="transform:translateY(45rem); ">
 
     <h:column styleClass="office-column">
         <f:facet name="header">
@@ -138,7 +138,7 @@
 </h:dataTable>
 
     
-<h:form styleClass="office-form add-office-form">
+<h:form styleClass="office-form add-office-form" style="transform:translateY(-32rem); ">
 
     <h:panelGrid columns="2" styleClass="office-grid">
 
@@ -178,7 +178,7 @@
 
 <h:form styleClass="office-form delete-office-form">
 
-    <h:panelGrid columns="2" styleClass="office-grid">
+    <h:panelGrid columns="2" styleClass="office-grid" style="transform:translateY(-25rem);">
 
         <h:outputLabel value="ID:" for="id"
                        styleClass="office-label--2"/>
@@ -191,7 +191,7 @@
 
     <h:commandButton value="Delete Office"
                      action="#{officeBean.deleteOffice}"
-                     styleClass="office-button delete-button"/>
+                     styleClass="office-button delete-button" style="transform:translateY(-23rem);" />
 
 </h:form>
 

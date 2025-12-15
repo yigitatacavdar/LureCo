@@ -99,7 +99,7 @@
 <h:dataTable value="#{projectBean.projects}"
              var="e"
              border="1"
-             styleClass="project-table">
+             styleClass="project-table" style="transform:translateY(40rem);">
 
     <h:column styleClass="project-column">
         <f:facet name="header">
@@ -132,7 +132,7 @@
 </h:dataTable>
     
     
-    <h:form styleClass="project-form add-project-form">
+    <h:form styleClass="project-form add-project-form" style="transform:translateY(-30rem); ">
 
     <h:panelGrid columns="2" styleClass="project-grid">
 
@@ -162,22 +162,22 @@
 </h:form>
     
     
-    <h:form styleClass="project-form delete-project-form">
+    <h:form styleClass="project-form delete-project-form"  >
 
-    <h:panelGrid columns="2" styleClass="project-grid">
+    <h:panelGrid columns="2" styleClass="project-grid" style="transform:translateY(-45rem) translateX(60rem); "  >
 
         <h:outputLabel value="ID:" for="id"
-                       styleClass="project-label"/>
+                       styleClass="project-label" />
         <h:inputText id="id"
                      placeholder="id"
                      value="#{projectBean.id}"
-                     styleClass="project-input project--input--2"/>
+                     styleClass="project-input project--input--2" />
 
     </h:panelGrid>
 
     <h:commandButton value="Delete Project"
                      action="#{projectBean.deleteProject}"
-                     styleClass="project-button delete-button--project"/>
+                     styleClass="project-button delete-button--project" style="transform:translateY(-45rem) translateX(60rem);" />
 </h:form>
             
 	
