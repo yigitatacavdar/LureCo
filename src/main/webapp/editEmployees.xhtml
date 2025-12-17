@@ -146,7 +146,13 @@
 <h:form styleClass="employee-form add-employee-form ">
 
     <h:panelGrid columns="2" styleClass="employee-grid" style="transform:translateY(-55rem); ">
-
+	
+		<h:outputLabel value="ID:" for="id"
+                       styleClass="employee-label"/>
+        <h:inputText id="id"
+                     value="#{employeeBean.id}"
+                     styleClass="employee-input"/>
+		
         <h:outputLabel value="Name:" for="name"
                        styleClass="employee-label"/>
         <h:inputText id="name"
@@ -176,11 +182,16 @@
     <h:commandButton value="Add Employee"
                      action="#{employeeBean.addEmployee}"
                      styleClass="employee-button add-button--employee" style="transform:translateY(-55rem); "/>
+                     
+    <h:commandButton value="Update Employee"
+                     action="#{employeeBean.updateEmployee}"
+                     styleClass="employee-button add-button--employee" style="transform:translateY(-55rem); "/>
+    
 </h:form>
 
 
 
-<h:form styleClass="employee-form delete-employee-form" style="transform:translateY(-80rem); ">
+<h:form styleClass="employee-form delete-employee-form" style="transform:translateY(-60rem); ">
 
     <h:panelGrid columns="2" styleClass="employee-grid">
 

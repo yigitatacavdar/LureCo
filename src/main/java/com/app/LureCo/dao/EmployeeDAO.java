@@ -3,6 +3,7 @@ package com.app.LureCo.dao;
 import java.util.ArrayList;
 
 
+
 import java.util.List;
 
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -49,6 +50,46 @@ public class EmployeeDAO {
             transaction.commit();
         }
     }
+    
+    public void update(int id, Employee updated) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction tx = null;
+
+        try {
+            tx = session.beginTransaction();
+
+            Employee existing = session.get(Employee.class, id);
+            if (existing == null) {
+                throw new RuntimeException("Employee not found: " + id);
+            }
+
+            if (updated.getName() != null) {
+                existing.setName(updated.getName());
+            }
+
+            if (updated.getDepartment() != null) {
+                existing.setDepartment(updated.getDepartment());
+            }
+
+            if (updated.getOffice() != null) {
+                existing.setOffice(updated.getOffice());
+            }
+
+            if (updated.getRole() != null) {
+                existing.setRole(updated.getRole());
+            }
+
+            tx.commit();
+
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+    }
+
+
     
     public List<Employee> search(String department, String office, String role) {
         Session session = HibernateUtil.getSessionFactory().openSession();

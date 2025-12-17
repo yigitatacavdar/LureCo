@@ -39,6 +39,13 @@ public class EmployeeBean implements Serializable {
     	id = 0;
     	return null;
     }
+    
+    public String updateEmployee() {
+    	dao.update(id, newEmployee);
+    	id = 0;
+    	newEmployee  = new Employee();
+    	return null;
+    }
 
     // Getter and setter for the form object
     public Employee getNewEmployee() {
