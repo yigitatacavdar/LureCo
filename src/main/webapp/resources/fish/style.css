@@ -37,8 +37,8 @@ body {
    .fish__container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 20rem 50rem 10rem;
-    min-height: 90vh;
+    grid-template-rows: 20rem 50rem;
+    max-height: 90vh;
    }
 
 
@@ -320,7 +320,6 @@ body {
   grid-row: 2 /3;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(2, minmax(29.5rem, 1fr));
-  min-width:max-content;
   
  
   
@@ -334,7 +333,6 @@ body {
    border-right: 3px solid #222;
    position:relative;
     overflow-y: scroll;
-    
    
    
    
@@ -875,7 +873,7 @@ body {
 .department-input--2 {
 	 padding: 6px;
   font-size: 2rem;
-  width: 19rem;
+  width:19rem;
   background: url("/LureCo/resources/public/project1.png");
   color: #222;
   
