@@ -37,8 +37,8 @@ body {
    .fish__container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 20rem 50rem;
-    max-height: 90vh;
+    grid-template-rows: 20rem 50rem 10rem;
+    min-height: 90vh;
    }
 
 
@@ -320,6 +320,7 @@ body {
   grid-row: 2 /3;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(2, minmax(29.5rem, 1fr));
+  min-width:max-content;
   
  
   
@@ -333,6 +334,7 @@ body {
    border-right: 3px solid #222;
    position:relative;
     overflow-y: scroll;
+    
    
    
    
@@ -408,7 +410,7 @@ body {
 
 .date__text--1--index {
 	
-  font-family: var(--table-font);
+  font-family: var(--brand-sans);
   font-weight: 800;
   font-size: 8rem;
   width: auto;
@@ -421,13 +423,13 @@ body {
 
 
 .date__text--2--index {
-  font-family: var(--table-font);
+  font-family: var(--brand-sans);
   font-weight: 800;
   font-size: 8rem;
   width: auto;
   height: auto;
   letter-spacing: .8rem; 
-  transform:translateY(-10rem);  
+  transform:translateY(-15rem);  
 	
 
  
@@ -468,7 +470,7 @@ body {
 	border: 3px groove #222;
 	height:3rem;
 	 background:url("/LureCo/resources/public/project1.png");
-	 	font-family: var(--brand-sans);
+	 	font-family: var(--table-font);
 	 
 }
 
@@ -521,7 +523,7 @@ body {
 	 font-size:3rem;
 	letter-spacing: 1.2px;
 	transform:translateX(5rem) translateY(1rem);
-	font-family: var(--brand-sans);
+	font-family: var(--table-font);
 	
 	
 }
@@ -529,7 +531,7 @@ body {
 .login-messages {
 	font-size:3rem;
 	letter-spacing: 1.2px;
-		font-family: var(--brand-sans);
+		font-family: var(--table-font);
 	
 	
 }
@@ -656,6 +658,7 @@ body {
    width: 40rem;
    color: #222;
    font-size: 2rem;
+   font-family: var(--table-font);
    
    
 }
@@ -663,6 +666,7 @@ body {
 .delete-office-form {
 	transform:translateX(60rem) translateY(-18rem);
 	width:10%;
+	font-family: var(--table-font);
 	
 }
 
@@ -670,16 +674,21 @@ body {
 
 
 .office-input--2 {
-  padding: 6px;
+  padding: 8px 16px;
    background:url("/LureCo/resources/public/project1.png");
-   width: 10rem;
+   width: 15rem;
+   
+   font-family: var(--table-font);
   
 }
 
 .office-button {
   margin-top: 10px;
   padding: 8px 16px;
+  width:20rem;
+  font-size:2rem;
   cursor: pointer;
+  font-family: var(--table-font);
 }
 
 
@@ -689,7 +698,7 @@ body {
 .add-button {
   background:url("/LureCo/resources/public/project1.png");
   font-family: var(--table-font);
-  transform: translateX(17rem);
+  transform: translateX(13rem);
 
 }
 
@@ -866,7 +875,7 @@ body {
 .department-input--2 {
 	 padding: 6px;
   font-size: 2rem;
-  width: 5rem;
+  width: 19rem;
   background: url("/LureCo/resources/public/project1.png");
   color: #222;
   
@@ -970,7 +979,7 @@ font-family: var(--table-font);
 }
 
 .project--input--2 {
-	padding: 6px;
+	padding: 8px 16px;
   font-size: 2rem;
   width:10rem;
   background: url("/LureCo/resources/public/project1.png");
@@ -1086,7 +1095,8 @@ font-family: var(--table-font);
   color: #222;
   left: 60rem;
   top: 0rem;
-  position:relative
+  position:relative;
+  display: inline-block;
 }
 
 
@@ -1104,10 +1114,12 @@ font-family: var(--table-font);
 .employee-input--2 {
   padding: 6px;
   font-size: 2rem;
-
+ position:absolute;
   background: url("/LureCo/resources/public/project1.png");
   color: #222;
-  transform: translateX(60rem);
+  transform: translateX(60rem) translateY(-2rem);
+  display:inline-block;
+  
   
   
 }
@@ -1119,13 +1131,28 @@ font-family: var(--table-font);
   font-size: 2rem;
   background: url("/LureCo/resources/public/project1.png");
   color: #222;
-  transform:translateY();
+
   
   
 }
 
+.employee-button--2 {
+	position:relative;
+  margin-top: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 2rem;
+  background: url("/LureCo/resources/public/project1.png");
+  color: #222;
+  left:3rem;
+  
+  
+}
+
+
 .delete-employee-form {
 	transform:translateY(-20rem);	
+	
   font-family: var(--table-font);
   
   
@@ -1144,7 +1171,11 @@ font-family: var(--table-font);
 }
 
 .delete-button--employee {
+	position:absolute;
 	transform: translateX(65rem);
+	width:22.5rem;
+	left:-2rem;
+	font-family: var(--table-font);
 }
 
 
